@@ -23,4 +23,10 @@
 ![image](https://user-images.githubusercontent.com/25473820/138873401-78b575f9-6164-4bf5-adca-a56bfbb203e7.png)
 
 
-13.  
+12. 
+
+![image](https://user-images.githubusercontent.com/25473820/138878648-9e426304-1c1a-4ae2-ac1f-0ee94e2997d7.png)
+
+13.
+
+![image](https://user-images.githubusercontent.com/25473820/138882672-1ee1a92e-05f5-4507-8baf-c0df6d2ad8b3.png)
