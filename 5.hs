@@ -18,7 +18,7 @@ getMostProfitableProductHelper (currentMostProfitable, rest) =
 
 getMostProfitableProduct :: [([Char], Integer, Integer)] -> ([Char], Integer, Integer)
 getMostProfitableProduct []       = error "This function works with non empty values"
-getMostProfitableProduct products = getMostProfitableProductHelper(("getMostProfitableProductStub", 0, 0), products)
+getMostProfitableProduct products = getMostProfitableProductHelper(("getMostProfitableProductStub", -10, 1), products)
 
 -- testing --
 assert :: Bool -> Bool
