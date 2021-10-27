@@ -26,8 +26,8 @@ assert False = error "Assertion failed"
 assert True  = True
 
 testNull   = getMostProfitableProduct([])       -- Should just throw error
-testSingle = getMostProfitableProduct([("Name", 10, 10)]) == ("Name", 10, 10) 
+testSingle = assert(getMostProfitableProduct([("Name", 10, 10)]) == ("Name", 10, 10))
 -- TODO: can we do something like getMostProfitableProduct([n]) == n ?
-testMultipleFirstBetter   = getMostProfitableProduct([("First", 10, 20), ("Second", 4, 40)]) == ("First", 10, 20)
-testMultipleSecondBetter  = getMostProfitableProduct([("First", 10, 20), ("Second", 4, 60)]) == ("Second", 4, 60)
+testMultipleFirstBetter   = assert(getMostProfitableProduct([("First", 10, 20), ("Second", 4, 40)]) == ("First", 10, 20))
+testMultipleSecondBetter  = assert(getMostProfitableProduct([("First", 10, 20), ("Second", 4, 60)]) == ("Second", 4, 60))
 
