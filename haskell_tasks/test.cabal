@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Task1
+      Task12
       Task2
       Task3
   other-modules:
