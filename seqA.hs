@@ -1,4 +1,4 @@
---–ешение с пары, не моЄ
+-- (!)Reshenie s pary, ne moe
 seqA n
   | n >= 3 =
     let 
