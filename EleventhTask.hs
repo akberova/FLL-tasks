@@ -1,11 +1,11 @@
-seqA :: Int -> Int
+seqA :: Integer -> Integer
 seqA n | n == 1 = 1
        | n == 2 = 2
        | n == 3 = 3
        | otherwise = helper 1 2 3 (n - 2)
 
 -- did not work after 173 (wtf??)
-helper :: Int -> Int -> Int -> Int -> Int
+helper :: Integer -> Integer -> Integer -> Integer -> Integer
 helper _ _ c 0 = c
 helper a b c n = helper b c (c + b - 2*a) (n - 1)
 
