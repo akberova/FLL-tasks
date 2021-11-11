@@ -1,7 +1,7 @@
-sort :: [([Char], Int)] -> [([Char], Int)]
+sort :: [([Char], Float)] -> [([Char], Float)]
 sort inputArr = sortHelper inputArr 0 0
 
-sortHelper :: [([Char], Int)] -> Int -> Int -> [([Char], Int)]
+sortHelper :: [([Char], Float)] -> Int -> Int -> [([Char], Float)]
 sortHelper arr i j | j == (length arr - 1) = arr
                    | i == (length arr - j - 1) = sortHelper arr 0 (j + 1)
                    | otherwise = 
@@ -16,4 +16,4 @@ sortHelper arr i j | j == (length arr - 1) = arr
         else
             sortHelper arr (i + 1) j
 
--- sort [("Piss", 46), ("Of", 42), ("Hate", 58), ("I", 65), ("Haskell", 0)]
+-- sort [("Piss", 46.1), ("Of", 42.6), ("Hate", 58.3), ("I", 65.75), ("Haskell", 0.6)]
