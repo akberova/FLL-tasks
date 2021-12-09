@@ -1,0 +1,15 @@
+.stack-work/
+*~
+app
+ChangeLog.md
+LICENSE
+LICENSE
+my-project.cabal
+package.yaml
+README.md
+Setup.hs
+.stack-work
+stack.yaml
+stack.yaml.lock
+test
+.vscode
