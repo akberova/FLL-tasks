@@ -9,7 +9,9 @@ import Task6
 import Task8
 import Task9
 import Task10
+import Task11
 import Task12
+import Task13
 
 products = [("Gvozdi", 3, 5), ("Dubeli", 10, 5), ("Ankery", 10, 6)]
 string = "Cat Bat. Rat Dog"
@@ -29,9 +31,11 @@ answer7 = preetifyAnswer 7 (split '.' string)
 answer8 = preetifyAnswer 8 (bubbleSort numbers)
 answer9 = preetifyAnswer 9 (bubbleSortWord wordss)
 answer10 = preetifyAnswer 10 (sortArray students)
+answer11 = preetifyAnswer 11 (seqA 301)
 answer12 = preetifyAnswer 12 (sumandnum 123456789)
+answer13 = preetifyAnswer 13 (multSecond ('A', 2) ('E', 7))
 
-answer = answer1 ++ answer2 ++ answer3 ++ answer4 ++ answer5 ++ answer6 ++ answer7 ++ answer8 ++ answer9 ++ answer10 ++ answer12
+answer = answer1 ++ answer2 ++ answer3 ++ answer4 ++ answer5 ++ answer6 ++ answer7 ++ answer8 ++ answer9 ++ answer10 ++ answer11 ++ answer12 ++ answer13
 
 main :: IO()
 main = putStr(answer)

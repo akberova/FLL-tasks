@@ -27,7 +27,9 @@ library
   exposed-modules:
       Task1
       Task10
+      Task11
       Task12
+      Task13
       Task2
       Task3
       Task4
