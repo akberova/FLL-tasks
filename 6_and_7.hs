@@ -29,4 +29,5 @@ assert False = error "Assertion failed"
 assert True  = True
 
 testSliceWords     = assert((sliceWords "Slice this thing into words") == ["Slice", "this", "thing", "into", "words"])
+testSliceWords2    = assert((sliceWords "Slice   this thing into words") == ["Slice", "this", "thing", "into", "words"])
 testSliceSentences = assert((sliceSentences "Slice this thing into sentences. Right. NOW!") == ["Slice this thing into sentences", " Right", " NOW!"])
