@@ -7,4 +7,4 @@ extractMaxElementFromList list = helper (tail(list)) (head(list))
 
 
 extractMaxElementFromSubLists list = 
-    extractMaxElementFromList (fmap extractMaxElementFromList list)
+    extractMaxElementFromList (map extractMaxElementFromList list)
