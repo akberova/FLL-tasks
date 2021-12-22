@@ -11,15 +11,6 @@ f4 :: [a] -> [[a]]
 f4 list = map helper list
     where helper a = [a]
 
-count :: (Eq a) => [a] -> a -> Integer
-count list elem = helper list elem
-    where 
-        helper [] elem = 0
-        helper list elem = if head(list) == elem then
-                               1 + helper (tail(list)) elem
-                           else
-                               helper (tail(list)) elem
-
 f5 :: (Eq a) => [a] -> [(a, Int)]
 f5 list = helper [] list
     where
