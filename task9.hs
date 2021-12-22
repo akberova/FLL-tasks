@@ -7,5 +7,5 @@ bubbleSort s = case bubbleSort' s of
                   | otherwise = x:(bubbleSort' (x2:xs))
         bubbleSort' s = s
 
-main = print (bubbleSort ["a","g","z","s","y","o","d"])
+main = print (bubbleSort ["algebra","gose","zoo","storm","order", "white","dildo"])
 
