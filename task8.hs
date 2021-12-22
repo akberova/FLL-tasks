@@ -1,4 +1,5 @@
-bubbleSort :: Ord a => [a] -> [a]
+bubbleSort :: [Integer]->[Integer]
+bubbleSort [] = []
 bubbleSort s = case bubbleSort' s of
                t | t == s -> t
                  | otherwise -> bubbleSort t
