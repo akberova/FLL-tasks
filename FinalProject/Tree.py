@@ -108,7 +108,6 @@ class SetElement:
 
         return result
 
-
     def getHeight(self):
         leftHeight = self.left.getHeight
         rightHeight = self.right.getHeight
@@ -124,12 +123,12 @@ class SetElement:
             next_indent = '{0}{1}{2}'.format(indent, ' ' if 'up' in last else VERTICAL_SYMBOL, ' ' * len(str(self.key)))
             up.displayTree(next_indent, next_last)
 
-        if last == 'up':
-            start_shape = RIGHT_END_SYMBOL
-        elif last == 'down':
-            start_shape = LEFT_END_SYMBOL
-        else:
-            start_shape = ' '
+            if last == 'up':
+                start_shape = RIGHT_END_SYMBOL
+            elif last == 'down':
+                start_shape = LEFT_END_SYMBOL
+            else:
+                start_shape = ' '
 
         if up is not None and down is not None:
             end_shape = CENTER_SYMBOL

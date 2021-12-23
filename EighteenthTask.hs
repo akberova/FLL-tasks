@@ -1,10 +1,11 @@
-data Log a = Log [String] a
+data Log a = Log [String] a deriving Show
 
 toLogger :: (a -> b) -> String -> (a -> Log b)
-toLogger fun str x = Log [str] (fun x)
+toLogger fun logStr x = Log [logStr] (fun x)
 
-logger :: a -> (a -> Log b) -> (b -> Log c) -> Log c
-logger x f g = Log list gx where
-    Log fs fx = f x
-    Log gs gx = g fx
-    list = fs ++ gs
+execLoggers :: a -> (a -> Log b) -> (b -> Log c) -> Log c
+execLoggers x fun1 fun2 = Log list result 
+    where
+        Log firstStr x1 = fun1 x
+        Log secondStr result = fun2 x1
+        list = firstStr ++ secondStr
