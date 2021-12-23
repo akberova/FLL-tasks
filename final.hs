@@ -1,5 +1,3 @@
-import Distribution.Simple.BuildTarget (resolveBuildTargets)
-import Distribution.Simple.Program.HcPkg (list)
 listOfDifference :: (Num a, Integral a) => [a] -> [a]
 listOfDifference [] = error "List is empty"
 listOfDifference a  | null (tail a) = []
