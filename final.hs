@@ -73,3 +73,9 @@ mySort a = helper a result
                 helper list res = if null list
                                     then res
                                     else helper (rmElemFromList (minElemInList list) list) (res ++ [minElemInList list])
+
+sorting :: Integral a => [a] -> Bool -> [a]
+sorting [] _ = error "List is empty"
+sorting a flag = if flag
+                    then mySort a
+                    else reverse (mySort a)
