@@ -1,3 +1,5 @@
+import Distribution.Simple.BuildTarget (resolveBuildTargets)
+import Distribution.Simple.Program.HcPkg (list)
 listOfDifference :: (Num a, Integral a) => [a] -> [a]
 listOfDifference [] = error "List is empty"
 listOfDifference a  | null (tail a) = []
@@ -41,7 +43,7 @@ listOfMultiply a | null (tail a) = []
 
 
 minDif :: (Ord a, Integral a) => [a] -> a
-minDif [] = error "error"
+minDif [] = error "List is empty"
 minDif a = minElemInList dif
             where
                 dif = listOfDifference a
@@ -52,3 +54,24 @@ lengthDifList a = lengthList dif
                     where
                         dif = listOfDifference a
 
+rmElemFromList :: Eq a => a -> [a] -> [a]
+rmElemFromList _ [] = []
+rmElemFromList x a = if head a == x
+                        then tail a
+                        else helper x a result
+                            where
+                                result = []
+                                helper elem list res = if head list == elem
+                                                            then res ++ tail list
+                                                            else helper elem (tail list) (res++[head list])
+
+
+mySort :: Integral a => [a] -> [a]
+mySort [] = error "List is empty"
+mySort a = helper a result
+            where
+                result = []
+                helper :: Integral a => [a] -> [a] -> [a]
+                helper list res = if null list
+                                    then res
+                                    else helper (rmElemFromList (minElemInList list) list) (res ++ [minElemInList list])
