@@ -1,5 +1,3 @@
-import Data.ByteString (count)
-
 countForOne (name, number, price) = number*price
 
 countForAll productList | null productList = 0
