@@ -9,6 +9,3 @@ fibonachi 0 = 0
 fibonachi 1 = 1
 fibonachi n | n < 0 = fibonachi (n+2) - fibonachi (n+1)
             | otherwise = fibonachi (n-1) + fibonachi (n-2)
-
-
-
