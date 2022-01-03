@@ -10,3 +10,8 @@ calculatePrice tovar = getCount tovar * getPrice tovar
 totalCost :: [(String, Integer, Integer)] -> Integer
 totalCost [] = 0
 totalCost products = calculatePrice(head products) + totalCost(tail products)
+
+a :: [(String, Integer, Integer)]
+a = [("Milk", 10, 10), ("Juice", 2, 15)]
+
+--example totalCost a

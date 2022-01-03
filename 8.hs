@@ -34,3 +34,5 @@ mySort a = helper a result
 
 a :: [Integer]
 a = [5,1,8,-4,7,7]
+
+--example mySort a

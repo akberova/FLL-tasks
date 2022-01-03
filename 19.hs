@@ -6,3 +6,5 @@ helper list result | null (tail list) = (result ++ [maximum (head list)], maximu
                    | otherwise = helper (tail list) (result ++ [maximum (head list)])
 
 a = [[1,2,1,3],[3,5,1],[5,8,-10],[-2,6,1,-8,0]]
+
+--example maximumFromSublists a

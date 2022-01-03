@@ -39,3 +39,5 @@ mySort a = helper a result
 
 a :: [(String, Float)]
 a = [("Lukoshenko",1.5), ("Petrov",2.13), ("Sidorov",3.25)]
+
+--example mySort a

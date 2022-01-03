@@ -20,5 +20,7 @@ moreProfit :: [(String, Integer, Integer)] -> String
 moreProfit [] = "None"
 moreProfit a = helper (tail a) (head a)
 
+a :: [(String, Integer, Integer)]
+a = [("Milk", 10, 10), ("Juice", 2, 15)]
 
-
+--example moreProfit a

@@ -34,3 +34,5 @@ mySort a = helper a result
 
 a :: [String]
 a = ["aa", "zyx", "as", "ha", "o"]
+
+--example mySort a
