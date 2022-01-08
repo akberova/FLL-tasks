@@ -1,7 +1,6 @@
 acc :: [a]
 acc = []
 
-
 sort :: (Num a, Ord a) => [a] -> [a] -> [a]
 sort acc numberList | null numberList = acc
                     | null acc = sort [head numberList] (tail numberList)
