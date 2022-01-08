@@ -10,8 +10,8 @@ sort acc wordList | null wordList = acc
                   | otherwise = findPos wordList (tail acc) leftPart
                   where
                       leftPart = [head acc]
-                      findPos numberList acc leftPart | not (null numberList) && (head numberList < head acc) = sort ((leftPart ++ [head numberList]) ++ acc) (tail numberList)
-                                                      | otherwise = findPos numberList (tail acc) (leftPart ++ [head acc])
+                      findPos wordList acc leftPart | not (null wordList) && (head wordList < head acc) = sort ((leftPart ++ [head wordList]) ++ acc) (tail wordList)
+                                                    | otherwise = findPos wordList (tail acc) (leftPart ++ [head acc])
 
 sortList :: [[Char]] -> [[Char]]
 sortList = sort acc
