@@ -13,6 +13,8 @@ import Task11
 import Task12
 import Task13
 import Task14_15
+import Task18
+import Task19
 
 data Point3D a = Point3D a a a deriving Show
 data GeomPrimitive a = Point (Point3D a) | LineSegment (Point3D a) (Point3D a) deriving Show
@@ -29,6 +31,9 @@ string = "Cat Bat. Rat Dog"
 numbers = [4, 7, 2, 1, 8, 5, 9]
 wordss = ["Zerg", "Protoss", "Alien", "Terran"]
 students = [("Slava", 7), ("Misha", 4), ("Matvey", 12), ("Lesha", 5)]
+
+addLog = toLogger (+1) "added one"
+mult2Log = toLogger (*2) "multiplied by 2"
 
 preetifyAnswer num ans = "\n" ++ "Task"++ show (num) ++ ": " ++ show (ans) ++ "\n"
 
@@ -49,6 +54,8 @@ answer14 = preetifyAnswer 14 (toString True)
 answer15 = preetifyAnswer 15 (toString (True, ()))
 answer16 = preetifyAnswer 16 (fmap (+ 1) (Point3D 5 6 7))
 answer17 = preetifyAnswer 17 (fmap (+ 1) $ LineSegment (Point3D 0 0 0) (Point3D 1 1 1))
+answer18 = preetifyAnswer 18 (execLoggers 3 addLog mult2Log)
+answer19 = preetifyAnswer 19 (getMaxList [[1,2,-5], [6,3,-8], [-9,1,4]])
 
 answer = answer1 ++ 
          answer2 ++ 
@@ -66,7 +73,9 @@ answer = answer1 ++
          answer14 ++ 
          answer15 ++
          answer16 ++
-         answer17
+         answer17 ++
+         answer18 ++
+         answer19
 
 main :: IO()
 main = putStr(answer)
