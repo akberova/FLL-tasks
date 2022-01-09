@@ -4,7 +4,7 @@ RIGHT_END_SYMBOL = "┌"
 LEFT_END_SYMBOL = "└"
 LEFT_START_SYMBOL = "┐"
 RIGHT_START_SYMBOL = "┘"
-
+# ! Оверхед множества на деревьях. Можно было сделать проще
 
 class SetIterator:
     def __init__(self, root):
@@ -18,7 +18,7 @@ class SetIterator:
         self.current += 1
         return self.items[self.current - 1]
 
-
+# Использование класс это не ФП, если это не функтор, а это не функтор.
 class SetElement:
     def __init__(self, key):
         self.key = key
@@ -55,6 +55,7 @@ class SetElement:
         return SetIterator(self)
 
     def isInclude(self, other) -> bool:
+    #Цикл, это не ФП.
         for item in other:
             if not self.search(item):
                 return False
@@ -96,7 +97,7 @@ class SetElement:
 
         items = self.getItems()
         result = []
-
+#  цикл, не ФП
         while items:
             newSet = SetElement(items[0])
             del items[0]
@@ -107,13 +108,13 @@ class SetElement:
             result.append(newSet)
 
         return result
-
+#     Не чистая функция
     def getHeight(self):
         leftHeight = self.left.getHeight
         rightHeight = self.right.getHeight
 
         return leftHeight if leftHeight > rightHeight else rightHeight
-
+# Не чистая функция
     def displayTree(self, indent=' ', last='updown'):
         up = self.right
         down = self.left
