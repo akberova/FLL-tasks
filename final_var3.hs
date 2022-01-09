@@ -27,6 +27,8 @@ isSublist :: Eq a => [a] -> [a] -> Bool
 isSublist a b = all (`elem` b) a
 
 --6
+-- ! Необходимо передавать параметр n (длина подсписка) 
+-- input> sublist 3 [1,2,3,4,5] -> [1,2,3]
 sublist :: [Int] -> [Int]
 sublist [] = error "List is empty"
 sublist list = if (tail list) == [] then list else (tail list)
