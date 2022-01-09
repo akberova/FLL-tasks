@@ -1,25 +1,15 @@
-data Item = Item {name :: String, quantity :: Integer, cost :: Integer}
+getQuantity :: (Integer, Integer, String) -> Integer
+getQuantity (quantity, cost, name) = quantity
 
-calcAllItemsCost :: (n :: Item) -> Integer
-calcAllItemsCost (n :: Item) = cost * quantity
+getCost :: (Integer, Integer, String) -> Integer
+getCost (quantity, cost, name) = cost
 
+calculateAllItemsCost :: (Integer, Integer, String) -> Integer
+calculateAllItemsCost item = getCost item * getQuantity item
 
-main = do
+totalCost :: [(Integer, Integer, String)] -> Integer
+totalCost [] = 0
+totalCost items = calculateAllItemsCost (head items) + totalCost(tail items)
 
-let pillow = Item {
-    name   = "Ikea Soft Pillow",
-    quantity    = 100,
-    cost         = 50 }
-
-let plate = Item {
-    name   = "Ikea White Plate",
-    quantity    = 120,
-    cost         = 30 }
-
-let glass = Item {
-    name   = "Ikea Crystall Glass",
-    quantity    = 150,
-    cost         = 25 }
-
-let result = calcAllItemsCost (pillow)
-print result
+arr :: [(String, Integer, Integer)]
+arr = [("Celery", 6, 80), ("Apple", 2, 90)]
