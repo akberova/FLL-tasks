@@ -18,3 +18,12 @@ sort acc studentList | null studentList = acc
 
 sortList :: [([Char], Int)] -> [([Char], Int)]
 sortList = sort acc
+-- sortList [("A",2.0),("B",3.0),("C",1.1)]
+
+<interactive>:14:16: error:
+    • No instance for (Fractional Int) arising from the literal ‘2.0’
+    • In the expression: 2.0
+      In the expression: ("A", 2.0)
+      In the first argument of ‘sortList’, namely
+        ‘[("A", 2.0), ("B", 3.0), ("C", 1.1)]’
+-- Средний балл не целочисленн        
