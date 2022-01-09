@@ -14,3 +14,5 @@ sort acc numberList | null numberList = acc
 
 sortList :: (Num a, Ord a) => [a] -> [a]
 sortList = sort acc
+-- sortList [1,2,4,0,10,0]
+-- *** Exception: Prelude.head: empty list
