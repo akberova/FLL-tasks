@@ -1,7 +1,7 @@
-acc :: [([Char], Int)]
+acc :: [([Char], Float)]
 acc = []
 
-sort :: [([Char], Int)] -> [([Char], Int)] -> [([Char], Int)]
+sort :: [([Char], Float)] -> [([Char], Float)] -> [([Char], Float)]
 sort acc studentList | null studentList = acc
                      | checkEr (head studentList) = sort acc (tail studentList)
                      | null acc = sort [head studentList] (tail studentList)
@@ -16,5 +16,5 @@ sort acc studentList | null studentList = acc
                          findPos studentList acc leftPart | not (null studentList) && lessThanAcc (head studentList) (head acc) = sort ((leftPart ++ [head studentList]) ++ acc) (tail studentList)
                                                           | otherwise = findPos studentList (tail acc) (leftPart ++ [head acc])
 
-sortList :: [([Char], Int)] -> [([Char], Int)]
+sortList :: [([Char], Float)] -> [([Char], Float)]
 sortList = sort acc
