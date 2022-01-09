@@ -17,11 +17,13 @@ subset a b = if (repeated a == True) then error "There can be no duplicate eleme
 --second
 -- На этих входных данных выдаёт False
 -- equal [1,2,3,4] [4,3,2,1]
-equal :: (Eq a) => [a] -> [a] -> Bool
-equal [] [] =  True 
-equal (x:xs) (y:ys) = if (repeated xs == True) then error "There can be no duplicate elements in the set" else 
-    if (repeated ys == True) then error "There can be no duplicate elements in the set" else x == y && equal xs ys
-equal _ _ = False
+-- стало работать
+qsort :: (Ord a) => [a] -> [a]
+qsort [] = []
+qsort (x:xs) = (qsort [y | y <- xs, y<=x]) ++ [x] ++ (qsort [y | y <- xs, y>x])
+
+equal x y = if (repeated x == True) then error "There can be no duplicate elements in the set" else 
+    if (repeated y == True) then error "There can be no duplicate elements in the set" else qsort x == qsort y
 
 --third
 numberOfElements :: (Eq a) => [a] -> Integer
@@ -51,3 +53,10 @@ maxElem (y:ys) = if (repeated ys == True) then error "There can be no duplicate 
                                        else (m)) (y) ys
 -- senevth
 https://ru.wikipedia.org/wiki/%D0%9E%D1%82%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D0%B5_%D1%8D%D0%BA%D0%B2%D0%B8%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8
+-- родилось седьмое
+eq n lst = if (repeated lst == True) then error "There can be no duplicate elements in the set" else equivalence n lst
+
+equivalence :: Int -> [a] -> [[a]]
+equivalence _ [] = []
+equivalence n lst = let (x,xs) = splitAt n lst
+                  in zipWith (:) x $ take n $ equivalence n xs ++ repeat []
