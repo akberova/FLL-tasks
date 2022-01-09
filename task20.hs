@@ -17,7 +17,7 @@ make_lists xs = map (mk) xs
 make_count (xs:x) = [length $ elemIndices xs x, x]
 split xs = splitAt $ (length xs)/2 xs
 
-
+-- ! Читай внимательно условие заданий
 main = do
   let mas = [1,2,3,4]
   let result = make_count mas
