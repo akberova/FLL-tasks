@@ -2,10 +2,13 @@ import qualified Data.List as List
 import Data.List (elemIndices)
 -- 29 var 
 
---1) list elements count from one 
+--1) list elements count from one
+-- *Main> oddSum [1,2,3,4]
+-- 4
 oddSum list = sum (map (brush list) list)
         where brush list a | odd (head (elemIndices a list)) = 0
                            | otherwise = a
+                       
 
 --2)
 exclude num = filter (condition num)
@@ -18,6 +21,9 @@ getExcludeLen num list = length (exclude num list)
 getMaxOfLess num list = maximum (filter (< num) list)
 
 --5)list elements count from one, так как было н уточнено произведений на что, предположиле и реализовала - на заданное число
+-- *Main> evenMul 5 [2,4,5,6,1,8]
+-- [30,40]
+-- Необходимо посчитать произведение элементов больше заданного числа. В данном случае больше 5 это 6 и 8 = 48
 evenMul num list = map (*num) (evenEl num list)
                     where evenEl num = filter (condition num list)
                             where condition num list a = odd (head (elemIndices a list)) && (a > num)
