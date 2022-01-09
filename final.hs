@@ -33,15 +33,13 @@ main = print(task2 [3, 2, 4, 8, 3, 1, 5, 7, 0, 4])
 main = print([3, 2, 4, 8, 3, 1, 5, 7, 0, 4])
 
 --task4
---! task4 [1,1,1,2,2,3,3,3,4,4,4,4]
--- >>[3,2,1,2,1,3,2,1,4,3,2,1]
--- Некорректное поведение. Ожидается [3,3,3,2,2,3,3,3,4,4,4,4]
+--! Поправил
 task4 :: [Int] -> [Int]
-task4 list = helper list []
+task4 list = helper list list []
 
-helper :: [Int] -> [Int] -> [Int]
-helper list res | list == [] = res
-                | otherwise = helper (tail list) (res ++ [(length(filter (== head list) list))])
+helper :: [Int] ->[Int] -> [Int] -> [Int]
+helper list1 list2 res  | list2 == [] = res
+                        | otherwise = helper list1 (tail list2) (res ++ [(length(filter (== head list2) list1))])
 
 main =  print([3,2,4,8,3,1,5,7,0,4,2,2,8]) >> print(task4 [3,2,4,8,3,1,5,7,0,4,2,2,8])
 
