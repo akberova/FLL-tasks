@@ -21,12 +21,19 @@ getExcludeLen num list = length (exclude num list)
 getMaxOfLess num list = maximum (filter (< num) list)
 
 --5)list elements count from one, так как было н уточнено произведений на что, предположиле и реализовала - на заданное число
--- *Main> evenMul 5 [2,4,5,6,1,8]
--- [30,40]
--- Необходимо посчитать произведение элементов больше заданного числа. В данном случае больше 5 это 6 и 8 = 48
 evenMul num list = map (*num) (evenEl num list)
                     where evenEl num = filter (condition num list)
                             where condition num list a = odd (head (elemIndices a list)) && (a > num)
+
+--5) переделка пятого
+vzlomZhepy num list = mulOfNeib (evenEl num list)
+                    where evenEl num = filter (condition num)
+                            where condition num a = even a && (a > num)
+
+mulOfNeib list | length list <= 1 = list
+               | otherwise = getMul (tail list) (init list)
+            where getMul first second = map (mulEl second) first
+                    where mulEl second a = a * second !! head (elemIndices a first)
 
 --6)переиспользую из 8 задания :3
 acc :: [a]
