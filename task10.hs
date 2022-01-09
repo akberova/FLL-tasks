@@ -12,6 +12,7 @@ toOne :: (String, Integer) -> String
 toOne (a1, a2) = a1
 
 --типо сортируем в порядке убывания и получаем лист имен приоритетных товаров
+-- ! Средний балл не должен быть целочисленным
 main = do
   let result = map toOne (sortBy sortGT [("Andrey", 2),("Kennady", 5),("Voronin", 3)])
   print result
